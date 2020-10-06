@@ -8,28 +8,6 @@
 
 /* MDH WCET BENCHMARK SUITE. */
 
-/* 2012/09/28, Jan Gustafsson <jan.gustafsson@mdh.se>
- * Changes:
- *  - Adam Betts wrote: I'm currently looking at the fir benchmark and noticed something
- * peculiar. The "in_data" array has 701 elements (effectively 700 as the
- * last elements acts as a sentinel value) and "fir_filter_int" requires
- * the length of the input/output arrays (passed in the " in_len"
- * argument). So I was expecting 700 to be passed as this parameter. Indeed it was,
- * but it has since been changed. The code now contains the following 2
- * lines:
- *
- * //  fir_filter_int(in_data,output,700,fir_int,35,285); Changed JG/Ebbe
- * fir_filter_int(in_data,output,10,fir_int,35,285);
- *
- * Can you explain why the change?
- *
- ***
- *
- * Jan G wrote: Since neither Ebbe nor I can explain the change, I propose to change it back.
- * =>
- * Action: Fixed.
- */
-
 
 /* Execute the integer fir filter from "C Algorithms for DSP".
  *
